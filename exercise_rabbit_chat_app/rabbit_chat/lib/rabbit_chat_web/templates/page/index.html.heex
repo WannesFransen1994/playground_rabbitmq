@@ -1,0 +1,18 @@
+<section class="row">
+  <article class="column">
+    Hard coded users:
+    <ul>
+      <li>a</li>
+      <li>b</li>
+      <li>c</li>
+      <li>wannes</li>
+    </ul>
+    <h2>Links to enter fake private chatrooms</h2>
+    <ul>
+      <li><%= link "Chat as user A to user B", to: Routes.chatter_chat_path(@conn, :index, "a", "b") %></li>
+      <li><%= link "Chat as user B to user A", to: Routes.chatter_chat_path(@conn, :index, "b", "a") %></li>
+      <li><%= link "Chat as user A to user C", to: Routes.chatter_chat_path(@conn, :index, "a", "c") %></li>
+      <li><%= link "Chat as user Wannes to user A", to: Routes.chatter_chat_path(@conn, :index, "wannes", "a") %></li>
+    </ul>
+  </article>
+</section>

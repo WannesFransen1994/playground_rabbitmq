@@ -1,0 +1,26 @@
+<h1>Chat</h1>
+
+Chat between <%= @current_chatter.name %> and <%= @destination_chatter.name %>
+
+<table>
+  <thead></thead>
+  <tbody id="chatters">
+    <%= for message <- @log do %>
+    <tr>
+      <td><%= "#{message.sender} - #{message.message}" %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<.form let={f} for={:message} id="chatter-form" phx-submit="save">
+
+  <%= label f, :message %>
+  <%= text_input f, :message %>
+  <%= error_tag f, :message %>
+
+  <div>
+    <%= submit "send", phx_disable_with: "Saving..." %>
+  </div>
+</.form>
