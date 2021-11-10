@@ -1,11 +1,11 @@
 import Mix.Config
 
 amqp_connection_options = [
-  host: "3.67.177.249",
+  host: "localhost",
   port: 5672,
   virtual_host: "/",
-  username: "testuser",
-  password: "7HDpJ23ntECiR6bx"
+  username: "guest",
+  password: "guest"
 ]
 
 config :amqp,
