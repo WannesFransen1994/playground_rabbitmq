@@ -10,7 +10,10 @@ defmodule RabbitCode.Application do
     children = [
       # Starts a worker by calling: RabbitCode.Worker.start_link(arg)
       # {RabbitCode.Worker, arg}
-      RabbitCode.HelloWorld.HelloWorldSupervisor
+
+      RabbitCode.HelloWorld.HelloPublisher,
+      RabbitCode.HelloWorld.WorldConsumer,
+      RabbitCode.HelloWorld.AnnoyingHello
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

@@ -36,19 +36,19 @@ defmodule RabbitCode.HelloWorld.WorldConsumer do
 
   # Confirmation sent by the broker after registering this process as a consumer
   def handle_info({:basic_consume_ok, %{consumer_tag: _consumer_tag}}, %@me{} = state) do
-    # do nothing?
+    # do nothing
     {:noreply, state}
   end
 
   # Sent by the broker when the consumer is unexpectedly cancelled (such as after a queue deletion)
   def handle_info({:basic_cancel, %{consumer_tag: _consumer_tag}}, %@me{} = state) do
-    # do nothing? No cleanup needs to happen?
+    # do nothing
     {:stop, :normal, state}
   end
 
   # Confirmation sent by the broker to the consumer process after a Basic.cancel
   def handle_info({:basic_cancel_ok, %{consumer_tag: _consumer_tag}}, %@me{} = state) do
-    # do nothing? No cleanup needs to happen?
+    # do nothing
     {:noreply, state}
   end
 

@@ -50,7 +50,6 @@ defmodule RabbitCode.HelloWorld.HelloPublisher do
   defp rabbitmq_setup(%@me{} = state) do
     # Creates an exchange. Note: docs "Basic.error" isn't an actual error that is returned. It just crashes!!!
     # docs: https://hexdocs.pm/amqp/AMQP.Exchange.html#declare/4
-    # r = AMQP.Exchange.declare(state.channel, @exchange, :direct, passive: true)
     :ok = AMQP.Exchange.declare(state.channel, @exchange, :direct)
 
     # Right now messages are lost (black hole effect) when publishing, create a queue and bind it to the exchange
